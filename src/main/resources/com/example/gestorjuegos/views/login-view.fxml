@@ -12,10 +12,9 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-
 <BorderPane prefHeight="237.0" prefWidth="289.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.gestorjuegos.controllers.LoginController">
    <center>
-      <VBox alignment="CENTER" maxWidth="300.0" prefHeight="385.0" prefWidth="427.0" spacing="20.0">
+      <VBox alignment="CENTER" maxHeight="300.0" maxWidth="300.0" prefHeight="385.0" prefWidth="427.0" spacing="20.0" style="-fx-border-style: solid; -fx-border-radius: 15px;">
         <padding>
           <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
         </padding>
@@ -43,10 +42,11 @@
                <Button fx:id="btnCancel" cancelButton="true" mnemonicParsing="false" onAction="#cancel" text="Cancelar" GridPane.rowIndex="2" />
             </children>
          </GridPane>
+      
+           <Label fx:id="info" />
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
       </VBox>
    </center>
-   <bottom>
-   
-        <Label fx:id="info" BorderPane.alignment="CENTER" />
-   </bottom>
 </BorderPane>
