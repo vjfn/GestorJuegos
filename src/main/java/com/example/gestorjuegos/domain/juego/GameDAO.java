@@ -14,17 +14,23 @@ public class GameDAO implements DAO<Game> {
         return null;
     }
 
-    public ArrayList<Game> getAllFromUser(User u) {
-        ArrayList<Game> results = new ArrayList<>(0);
+    /*
+    ya no hace falta porque las relaciones las hace hibernate
+       public ArrayList<Game> getAllFromUser(User u) {
 
-        try(Session s = HibernateUtil.getSessionFactory().openSession()){
-            Query<Game> q = s.createQuery("from Game where usuarioId=:userId",Game.class);
-            q.setParameter("userId",u.getId());
-            results = (ArrayList<Game>) q.getResultList();
-        }
+           ArrayList<Game> results = new ArrayList<>(0);
 
-        return results;
-    }
+           try(Session s = HibernateUtil.getSessionFactory().openSession()){
+               Query<Game> q = s.createQuery("from Game where usuarioId=:userId",Game.class);
+               q.setParameter("userId",u.getId());
+               results = (ArrayList<Game>) q.getResultList();
+           }
+
+           return results;
+
+
+       }
+   */
 
     @Override
     public Game get(Long id) {

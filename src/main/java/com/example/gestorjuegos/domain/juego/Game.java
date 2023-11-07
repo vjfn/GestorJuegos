@@ -46,8 +46,8 @@ public class Game implements Serializable {
   @Column(name="estado_Caja")
   private String boxStatus;
 
-  @Column(name="usuario_id")
-  private Long usuarioId;
+//  @Column(name="usuario_id")
+//  private Long usuarioId;
 
   @ManyToOne
   //la clave foranea
@@ -55,6 +55,21 @@ public class Game implements Serializable {
   //el atributo user va en el onetomany
   private User user;
 
-
-
+  @Override
+  public String toString() {
+    return "Game{" +
+            "id=" + id +
+            ", name='" + name + '\'' +
+            ", year=" + year +
+            ", players=" + players +
+            ", category='" + category + '\'' +
+            ", platform='" + platform + '\'' +
+            ", studio='" + studio + '\'' +
+            ", enterprise='" + enterprise + '\'' +
+            ", format='" + format + '\'' +
+            ", gameStatus='" + gameStatus + '\'' +
+            ", boxStatus='" + boxStatus + '\'' +
+            ", user=" + user.getUsername() +
+            '}';
+  }
 }
