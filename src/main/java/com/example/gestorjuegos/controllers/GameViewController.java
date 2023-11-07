@@ -19,6 +19,34 @@ public class GameViewController implements Initializable {
     private MenuItem mVolver;
     @javafx.fxml.FXML
     private Label gameInfo;
+    @javafx.fxml.FXML
+    private Label labelTitle;
+    @javafx.fxml.FXML
+    private TextField txtName;
+    @javafx.fxml.FXML
+    private TextField txtCategory;
+    @javafx.fxml.FXML
+    private TextField txtFormat;
+    @javafx.fxml.FXML
+    private TextField txtEnterprise;
+    @javafx.fxml.FXML
+    private TextField txtStudio;
+    @javafx.fxml.FXML
+    private TextField txtGameStatus;
+    @javafx.fxml.FXML
+    private TextField txtBoxStatus;
+    @javafx.fxml.FXML
+    private Spinner spinnerYear;
+    @javafx.fxml.FXML
+    private Spinner spinnerPlayers;
+    @javafx.fxml.FXML
+    private ChoiceBox comboUser;
+    @javafx.fxml.FXML
+    private Button btnSave;
+    @javafx.fxml.FXML
+    private Button btnDelete;
+    @javafx.fxml.FXML
+    private Button btnReturn;
 
     @javafx.fxml.FXML
     public void volver(ActionEvent actionEvent) {
@@ -41,5 +69,17 @@ public class GameViewController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         gameInfo.setText(Session.getCurentGame().toString());
+    }
+
+    @javafx.fxml.FXML
+    public void save(ActionEvent actionEvent) {
+    }
+
+    @javafx.fxml.FXML
+    public void delete(ActionEvent actionEvent) {
+    }
+
+    @javafx.fxml.FXML
+    public void returnBack(ActionEvent actionEvent) {
     }
 }

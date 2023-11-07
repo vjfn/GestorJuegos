@@ -32,7 +32,7 @@ public class User implements Serializable {
     @OneToMany(mappedBy = "user",fetch = FetchType.EAGER)
     private List<Game> games = new ArrayList<>(0);
 
-    public Long gamesQuantity(){
+    public Long getGamesQuantity(){
         gamesQuantity = (long) games.size();
         return gamesQuantity;
     }
