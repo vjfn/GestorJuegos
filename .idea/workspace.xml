@@ -4,13 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9ad51bb7-25bf-4b6c-be5b-2c80b99f9fa5" name="Changes" comment="07/11/2023">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/images/deshacer.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/images/disco-flexible.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/images/papelera-de-reciclaje.png" afterDir="false" />
+    <list default="true" id="9ad51bb7-25bf-4b6c-be5b-2c80b99f9fa5" name="Changes" comment="funciona">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/gestorjuegos/controllers/GameViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/gestorjuegos/controllers/GameViewController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/gestorjuegos/domain/usuario/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/gestorjuegos/domain/usuario/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/gestorjuegos/domain/usuario/UserDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/gestorjuegos/domain/usuario/UserDAO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/gestorjuegos/views/game-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/gestorjuegos/views/game-view.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -76,7 +73,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1699342064249</updated>
-      <workItem from="1699342065341" duration="3253000" />
+      <workItem from="1699342065341" duration="5749000" />
     </task>
     <task id="LOCAL-00001" summary="07/11/2023">
       <option name="closed" value="true" />
@@ -86,7 +83,15 @@
       <option name="project" value="LOCAL" />
       <updated>1699342748052</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="funciona">
+      <option name="closed" value="true" />
+      <created>1699348311619</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1699348311619</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -94,6 +99,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="07/11/2023" />
-    <option name="LAST_COMMIT_MESSAGE" value="07/11/2023" />
+    <MESSAGE value="funciona" />
+    <option name="LAST_COMMIT_MESSAGE" value="funciona" />
   </component>
 </project>

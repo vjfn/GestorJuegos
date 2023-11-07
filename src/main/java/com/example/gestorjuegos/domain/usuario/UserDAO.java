@@ -11,7 +11,14 @@ public class UserDAO implements DAO<User> {
 
     @Override
     public ArrayList<User> getAll() {
-        return null;
+        var salida = new ArrayList<User>(0);
+        try (Session s = HibernateUtil.getSessionFactory().openSession()){
+            Query<User> q = s.createQuery("from User ",User.class);
+            salida =(ArrayList<User>) q.getResultList();
+
+        }
+
+        return salida;
     }
 
     @Override

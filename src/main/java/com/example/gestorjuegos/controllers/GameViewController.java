@@ -3,9 +3,15 @@ package com.example.gestorjuegos.controllers;
 
 import com.example.gestorjuegos.App;
 import com.example.gestorjuegos.Session;
+import com.example.gestorjuegos.domain.HibernateUtil;
+import com.example.gestorjuegos.domain.juego.Game;
+import com.example.gestorjuegos.domain.usuario.User;
+import com.example.gestorjuegos.domain.usuario.UserDAO;
 import javafx.event.ActionEvent;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
+import javafx.util.StringConverter;
+import org.hibernate.Transaction;
 
 import java.io.IOException;
 import java.net.URL;
@@ -47,6 +53,8 @@ public class GameViewController implements Initializable {
     private Button btnDelete;
     @javafx.fxml.FXML
     private Button btnReturn;
+    @javafx.fxml.FXML
+    private TextField txtPlatform;
 
     @javafx.fxml.FXML
     public void volver(ActionEvent actionEvent) {
@@ -69,10 +77,49 @@ public class GameViewController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         gameInfo.setText(Session.getCurentGame().toString());
+        spinnerPlayers.setValueFactory(new SpinnerValueFactory.IntegerSpinnerValueFactory(1,4,1,1));
+        spinnerYear.setValueFactory(new SpinnerValueFactory.IntegerSpinnerValueFactory(1970,2023,1990,1));
+        comboUser.setConverter(new StringConverter<User>() {
+            @Override
+            public String toString(User user) {
+                return (user!=null)? user.getUsername():"";
+            }
+
+            @Override
+            public User fromString(String s) {
+                return null;
+            }
+        });
+        txtName.setText(Session.getCurentGame().getName());
+        txtCategory.setText(Session.getCurentGame().getCategory());
+        txtBoxStatus.setText(Session.getCurentGame().getGameStatus());
+        txtEnterprise.setText(Session.getCurentGame().getEnterprise());
+        txtGameStatus.setText(Session.getCurentGame().getGameStatus());
+        txtFormat.setText(Session.getCurentGame().getFormat());
+        txtPlatform.setText(Session.getCurentGame().getPlatform());
+        txtStudio.setText(Session.getCurentGame().getStudio());
+
+        comboUser.getItems().addAll((new UserDAO().getAll()));
+
+        comboUser.setValue(Session.getCurentGame().getUser());
     }
 
     @javafx.fxml.FXML
     public void save(ActionEvent actionEvent) {
+
+        try(org.hibernate.Session s = HibernateUtil.getSessionFactory().openSession()){
+            Transaction t = s.beginTransaction();
+            Game g = s.get(Game.class, Session.getCurentGame().getId());
+
+            if(txtName.getText().length()>2) g.setName(txtName.getText());
+            if(txtCategory.getText().length()>2) g.setCategory(txtCategory.getText());
+            if(txtStudio.getText().length()>2) g.setStudio(txtStudio.getText());
+
+            t.commit();
+
+            Session.setCurentGame(g);
+        }
+
     }
 
     @javafx.fxml.FXML
